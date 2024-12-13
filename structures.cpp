@@ -17,5 +17,4 @@ int main()
     cout << "Size using Pointers\n"<< p->lenght << endl << p->breadth << endl;
     cout << "Size using parameters\n"<< a.lenght << endl << a.breadth << endl;
     return 0;
-
 }
