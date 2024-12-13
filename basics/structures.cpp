@@ -23,7 +23,7 @@ void assgin_breadth(rectangle *p,int new_breadth){
 
 void print_properties(rectangle *p){
     cout << "Lenght of rectangle is : " << p->lenght << endl;
-    cout << "Bread of rectangle is : " << p->breadth <<endl;
+    cout << "Breadth of rectangle is : " << p->breadth <<endl;
 }
 
 
