@@ -2,19 +2,38 @@
 using namespace std;
 struct rectangle
 {
-    int lenght;
-    int breadth;
+    int lenght=0;
+    int breadth=0;
 };
+
+int area(rectangle *p){
+    int lenght=p->lenght;
+    int breadth=p->breadth;
+    int area=lenght*breadth;
+    return area;
+}
+
+void assgin_lenght(rectangle *p,int new_length){
+    p->lenght=new_length;
+}
+
+void assgin_breadth(rectangle *p,int new_breadth){
+    p->breadth=new_breadth;
+}
+
+void print_properties(rectangle *p){
+    cout << "Lenght of rectangle is : " << p->lenght << endl;
+    cout << "Bread of rectangle is : " << p->breadth <<endl;
+}
+
+
 int main()
 {
     rectangle a;
-    rectangle *p;
-    p=(rectangle *)malloc(sizeof(rectangle));
-    p->lenght=55;
-    p->breadth=50;
-    a.lenght=10;
-    a.breadth=20;
-    cout << "Size using Pointers\n"<< p->lenght << endl << p->breadth << endl;
-    cout << "Size using parameters\n"<< a.lenght << endl << a.breadth << endl;
+    print_properties(&a);
+    assgin_lenght(&a,10);
+    print_properties(&a);
+    assgin_breadth(&a,20);
+    print_properties(&a);
     return 0;   
 }
