@@ -86,6 +86,37 @@ struct Node *insert_at_middle(struct Node *head,int data,int position){
     return head;
 }
 
+void delete_node(struct Node **head,int position){
+    int counter=1;
+    struct Node *curr,*buffer;
+    if (*head==NULL){
+        cout<<"Empty list"<<"\n";
+        return;
+    }
+    curr=*head;
+    if (position==1){
+        
+        *head=(*head)->next;
+        free(curr);
+        return;
+    }
+    else {
+        while(curr!=NULL && counter<position){
+            counter++;
+            buffer=curr;
+            curr=curr->next;
+        }
+        if (curr==NULL){
+            cout<<"Position not found";
+        }
+        else{
+            buffer->next=curr->next;
+            free(curr);
+        }
+    }
+    return;
+}
+
 
 
 int main(){
@@ -96,7 +127,9 @@ int main(){
     print_Nodes(head);
     head=insert_at_end(head,325);
     print_Nodes(head);
-    head=insert_at_middle(head,1000,5);
+    head=insert_at_middle(head,1000,2);
+    print_Nodes(head);
+    delete_node(&head,1);
     print_Nodes(head);
     return 0;
 }
