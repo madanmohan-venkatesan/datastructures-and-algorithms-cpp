@@ -107,7 +107,7 @@ void delete_node(struct Node **head,int position){
             curr=curr->next;
         }
         if (curr==NULL){
-            cout<<"Position not found";
+            cout<<"Position not found"<<"\n";
         }
         else{
             buffer->next=curr->next;
