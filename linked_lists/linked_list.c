@@ -150,9 +150,11 @@ int main()
     print_Nodes(head);
     head=insert_at_end(head,325);
     print_Nodes(head);
-    head=insert_at_middle(head,1000,2);
+    head=insert_at_middle(head,1000,3);
     print_Nodes(head);
     delete_node(&head,1);
+    print_Nodes(head);
+    head=insert_at_middle(head,10009,4);
     print_Nodes(head);
     return 0;
 }
