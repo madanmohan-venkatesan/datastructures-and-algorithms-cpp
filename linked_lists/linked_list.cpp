@@ -1,24 +1,29 @@
 #include <iostream>
 using namespace std;
 
-class Node{
+class Node
+{
     public:
     int data;
     Node *next;
-    Node(int data){
+    Node(int data)
+    {
         this->data=data;
         this->next=NULL;
     }
 };
 
-class linked_list{
+class linked_list
+{
     private:
     Node *head;
     public:
-    linked_list(){
+    linked_list()
+    {
         this->head=NULL;
     }
-    void print_nodes(){
+    void print_nodes()
+    {
         Node *curr;
         int size=0;
         for (curr=this->head;curr!=NULL;curr=curr->next){
