@@ -1,4 +1,3 @@
-//need to check delete part, middle part 
 #include<iostream>
 using namespace std;
 
@@ -77,7 +76,7 @@ class dll
         Node *buffer,*curr=this->head;
         Node *temp=new Node(data);
         int counter=1;
-        if (curr=NULL)
+        if (curr==NULL)
         {
             cout<<"Empty list"<<"\n";
         }
@@ -93,16 +92,14 @@ class dll
                 curr=curr->next_node;
                 counter++;
             }
-            if (counter<pos)
+            if (curr->next_node==NULL && counter==pos-1)
+            {
+                curr->next_node=temp;
+                temp->prev_node=curr;
+            }
+            else if (counter<pos)
             {
                 cout<<"Position not found"<<"\n";
-            }
-            else if (curr->next_node==NULL)
-            {
-                buffer->next_node=temp;
-                temp->prev_node=buffer;
-                temp->next_node=curr;
-                curr->prev_node=temp;
             }
             else
             {
@@ -118,7 +115,7 @@ class dll
     {
         Node *temp,*buffer,*curr=this->head;
         int counter=1;
-        if (pos=1)
+        if (pos==1)
         {
             this->head=this->head->next_node;
             head->prev_node=NULL;
@@ -126,13 +123,13 @@ class dll
         }
         else
         {
-            while(curr->next_node!=NULL && counter>pos)
+            while(curr->next_node!=NULL && counter<pos)
             {
                 buffer=curr;
                 curr=curr->next_node;
                 counter++;
             }
-            if (counter<pos)
+            if (curr->next_node==NULL && counter<pos)
             {
                 //review counter checking here
                 cout<<"Position not found"<<"\n";
@@ -165,7 +162,7 @@ int main()
     a.print_nodes();
     a.insert_at_end(1000);
     a.print_nodes();
-    a.insert_at_middle(1234,1);
+    a.insert_at_middle(1234,4);
     a.print_nodes();
     a.delete_node(3);
     a.print_nodes();
