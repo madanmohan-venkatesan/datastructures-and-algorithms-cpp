@@ -50,7 +50,7 @@ void *push(struct stack *S,int data)
     struct Node *temp=(struct Node *)malloc(sizeof(struct Node));
     if(!temp)
     {
-        cout<<"Memory error while creating node";
+        cout<<"Memory error while creating node"<<"\n";
     }
     temp->data=data;
     temp->next=S->top;
